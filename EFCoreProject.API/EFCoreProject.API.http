@@ -1,0 +1,19 @@
+@EFCoreProject.API_HostAddress = http://localhost:5175
+
+GET {{EFCoreProject.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{EFCoreProject.API_HostAddress}}/Api/Doctor/
+Accept: application/json
+###
+
+GET {{EFCoreProject.API_HostAddress}}/Api/PharmaceuticalCompany/
+Accept: application/json
+
+###
+GET {{EFCoreProject.API_HostAddress}}/Api/PharmaceuticalCompany/Contracts/GlaxoSmithKline
+Accept: application/json
+
+###

@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="PharmacyPrescriptionManagementSystemContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="8.0.3" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn
+Relational:MaxIdentifierLength: 63
+RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]" Category="Model" Group="Expanded" />
+<Node Id = "Contract" Label="Contract" Name="Contract" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: contract
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Doctor" Label="Doctor" Name="Doctor" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: doctor
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Contract.PharmacyName" Label="PharmacyName (string)" Name="PharmacyName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmacy_name" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Contract.PharmaceuticalCompanyNameNavigation" Label="PharmaceuticalCompanyNameNavigation (1)" Name="PharmaceuticalCompanyNameNavigation" Category="Navigation Property" Type="PharmaceuticalCompany"  Field="" Dependent="" Principal="PharmaceuticalCompany" Inverse="Contracts" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Contract.PharmacyNameNavigation" Label="PharmacyNameNavigation (1)" Name="PharmacyNameNavigation" Category="Navigation Property" Type="Pharmacy"  Field="" Dependent="" Principal="Pharmacy" Inverse="Contracts" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Contract.supervisor" Label="supervisor (1)" Name="supervisor" Category="Navigation Property" Type="Supervisor"  Field="" Dependent="" Principal="Supervisor" Inverse="Contracts" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Contract.PharmaceuticalCompanyName" Label="PharmaceuticalCompanyName (string)" Name="PharmaceuticalCompanyName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmaceutical_company_name" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Contract.EndDate" Label="EndDate (DateOnly)" Name="EndDate" Category="Property Required" Type="DateOnly" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: end_date" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Contract.StartDate" Label="StartDate (DateOnly)" Name="StartDate" Category="Property Required" Type="DateOnly" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: start_date" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Contract.SupervisorId" Label="SupervisorId (string)" Name="SupervisorId" Category="Property Foreign" Type="string" MaxLength="(128)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 128
+Relational:ColumnName: supervisor_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Contract.Text" Label="Text (string)" Name="Text" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: text" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Drug" Label="Drug" Name="Drug" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: drug
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Doctor.PersonSsn" Label="PersonSsn (string)" Name="PersonSsn" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: person_ssn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Doctor.Patients" Label="Patients (*)" Name="Patients" Category="Navigation Collection" Type="IEnumerable&lt;Patient&gt;"  Field="" Dependent="Patient" Principal="" Inverse="DoctorSsnNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Doctor.Prescriptions" Label="Prescriptions (*)" Name="Prescriptions" Category="Navigation Collection" Type="IEnumerable&lt;Prescription&gt;"  Field="" Dependent="Prescription" Principal="" Inverse="DoctorSsnNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Doctor.Address" Label="Address (string)" Name="Address" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: address" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Doctor.ExperienceYears" Label="ExperienceYears (int)" Name="ExperienceYears" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: experience_years" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Doctor.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: first_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Doctor.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: last_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Doctor.Speciality" Label="Speciality (string)" Name="Speciality" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: speciality" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient" Label="Patient" Name="Patient" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: patient
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Drug.DrugTradeName" Label="DrugTradeName (string)" Name="DrugTradeName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: drug_trade_name" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Drug.PharmaceuticalCompanyNameNavigation" Label="PharmaceuticalCompanyNameNavigation (1)" Name="PharmaceuticalCompanyNameNavigation" Category="Navigation Property" Type="PharmaceuticalCompany"  Field="" Dependent="" Principal="PharmaceuticalCompany" Inverse="Drugs" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Drug.Prescriptions" Label="Prescriptions (*)" Name="Prescriptions" Category="Navigation Collection" Type="IEnumerable&lt;Prescription&gt;"  Field="" Dependent="Prescription" Principal="" Inverse="DrugTradeNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Drug.Sales" Label="Sales (*)" Name="Sales" Category="Navigation Collection" Type="IEnumerable&lt;Sale&gt;"  Field="" Dependent="Sale" Principal="" Inverse="DrugTradeNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Drug.Formula" Label="Formula (string)" Name="Formula" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: formula" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Drug.PharmaceuticalCompanyName" Label="PharmaceuticalCompanyName (string)" Name="PharmaceuticalCompanyName" Category="Property Foreign" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmaceutical_company_name" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "PharmaceuticalCompany" Label="PharmaceuticalCompany" Name="PharmaceuticalCompany" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: pharmaceutical_company
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Patient.PersonSsn" Label="PersonSsn (string)" Name="PersonSsn" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: person_ssn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient.DoctorSsnNavigation" Label="DoctorSsnNavigation (1)" Name="DoctorSsnNavigation" Category="Navigation Property" Type="Doctor"  Field="" Dependent="" Principal="Doctor" Inverse="Patients" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Patient.Prescriptions" Label="Prescriptions (*)" Name="Prescriptions" Category="Navigation Collection" Type="IEnumerable&lt;Prescription&gt;"  Field="" Dependent="Prescription" Principal="" Inverse="PatientSsnNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Patient.Address" Label="Address (string)" Name="Address" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: address" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient.Age" Label="Age (int?)" Name="Age" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: age" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient.DoctorSsn" Label="DoctorSsn (string)" Name="DoctorSsn" Category="Property Foreign" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: doctor_ssn" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: first_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Patient.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: last_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Pharmacy" Label="Pharmacy" Name="Pharmacy" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: pharmacy
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "PharmaceuticalCompany.PharmaceuticalCompanyName" Label="PharmaceuticalCompanyName (string)" Name="PharmaceuticalCompanyName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmaceutical_company_name" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "PharmaceuticalCompany.Contracts" Label="Contracts (*)" Name="Contracts" Category="Navigation Collection" Type="IEnumerable&lt;Contract&gt;"  Field="" Dependent="Contract" Principal="" Inverse="PharmaceuticalCompanyNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "PharmaceuticalCompany.Drugs" Label="Drugs (*)" Name="Drugs" Category="Navigation Collection" Type="IEnumerable&lt;Drug&gt;"  Field="" Dependent="Drug" Principal="" Inverse="PharmaceuticalCompanyNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "PharmaceuticalCompany.PhoneNumber" Label="PhoneNumber (string)" Name="PhoneNumber" Category="Property Required" Type="string" MaxLength="(20)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 20
+Relational:ColumnName: phone_number" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Prescription" Label="Prescription" Name="Prescription" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: prescription
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Pharmacy.PharmacyName" Label="PharmacyName (string)" Name="PharmacyName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmacy_name" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Pharmacy.Contracts" Label="Contracts (*)" Name="Contracts" Category="Navigation Collection" Type="IEnumerable&lt;Contract&gt;"  Field="" Dependent="Contract" Principal="" Inverse="PharmacyNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Pharmacy.Sales" Label="Sales (*)" Name="Sales" Category="Navigation Collection" Type="IEnumerable&lt;Sale&gt;"  Field="" Dependent="Sale" Principal="" Inverse="PharmacyNameNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Pharmacy.Address" Label="Address (string)" Name="Address" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: address" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Pharmacy.Phone" Label="Phone (string)" Name="Phone" Category="Property Required" Type="string" MaxLength="(20)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 20
+Relational:ColumnName: phone" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Sale" Label="Sale" Name="Sale" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: sale
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Prescription.DoctorSsn" Label="DoctorSsn (string)" Name="DoctorSsn" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: doctor_ssn" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Prescription.DoctorSsnNavigation" Label="DoctorSsnNavigation (1)" Name="DoctorSsnNavigation" Category="Navigation Property" Type="Doctor"  Field="" Dependent="" Principal="Doctor" Inverse="Prescriptions" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Prescription.DrugTradeNameNavigation" Label="DrugTradeNameNavigation (1)" Name="DrugTradeNameNavigation" Category="Navigation Property" Type="Drug"  Field="" Dependent="" Principal="Drug" Inverse="Prescriptions" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Prescription.PatientSsnNavigation" Label="PatientSsnNavigation (1)" Name="PatientSsnNavigation" Category="Navigation Property" Type="Patient"  Field="" Dependent="" Principal="Patient" Inverse="Prescriptions" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Prescription.PatientSsn" Label="PatientSsn (string)" Name="PatientSsn" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: patient_ssn" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Prescription.DrugTradeName" Label="DrugTradeName (string)" Name="DrugTradeName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: drug_trade_name" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Prescription.LatestDate" Label="LatestDate (DateOnly)" Name="LatestDate" Category="Property Required" Type="DateOnly" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: latest_date" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Prescription.Quantity" Label="Quantity (int)" Name="Quantity" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: quantity" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Supervisor" Label="Supervisor" Name="Supervisor" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: supervisor
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Sale.DrugTradeName" Label="DrugTradeName (string)" Name="DrugTradeName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: drug_trade_name" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Sale.DrugTradeNameNavigation" Label="DrugTradeNameNavigation (1)" Name="DrugTradeNameNavigation" Category="Navigation Property" Type="Drug"  Field="" Dependent="" Principal="Drug" Inverse="Sales" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Sale.PharmacyNameNavigation" Label="PharmacyNameNavigation (1)" Name="PharmacyNameNavigation" Category="Navigation Property" Type="Pharmacy"  Field="" Dependent="" Principal="Pharmacy" Inverse="Sales" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Sale.PharmacyName" Label="PharmacyName (string)" Name="PharmacyName" Category="Property Primary" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: pharmacy_name" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Sale.Price" Label="Price (decimal)" Name="Price" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Precision: 10
+Relational:ColumnName: price
+Scale: 2" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Supervisor" Label="Supervisor" Name="Supervisor" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "Supervisor.SupervisorId" Label="SupervisorId (string)" Name="SupervisorId" Category="Property Primary" Type="string" MaxLength="(128)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 128
+Relational:ColumnName: supervisor_id" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Supervisor.Contracts" Label="Contracts (*)" Name="Contracts" Category="Navigation Collection" Type="ICollection&lt;Contract&gt;"  Field="" Dependent="Contract" Principal="" Inverse="supervisor" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Supervisor.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: first_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Supervisor.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="(255)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 255
+Relational:ColumnName: last_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="Contract" Category="Contains" />
+<Link Source = "IModel" Target="Doctor" Category="Contains" />
+<Link Source = "Contract" Target="Contract.PharmaceuticalCompanyNameNavigation" Category="Contains" />
+<Link Source = "Contract" Target="Contract.PharmacyNameNavigation" Category="Contains" />
+<Link Source = "Contract" Target="Contract.supervisor" Category="Contains" />
+<Link Source = "Contract" Target="Contract.PharmacyName" Category="Contains" />
+<Link Source="Contract" Target="PharmaceuticalCompany" From="Contract.PharmaceuticalCompanyName" To="PharmaceuticalCompany.PharmaceuticalCompanyName" Name="Contract -> PharmaceuticalCompany" Annotations="Relational:Name: contract_pharmaceutical_company_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Contract" Target="Pharmacy" From="Contract.PharmacyName" To="Pharmacy.PharmacyName" Name="Contract -> Pharmacy" Annotations="Relational:Name: contract_pharmacy_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Contract" Target="Supervisor" From="Contract.SupervisorId" To="Supervisor.SupervisorId" Name="Contract -> Supervisor" Annotations="Relational:Name: contract_supervisor_id_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Contract" Target="Contract.PharmaceuticalCompanyName" Category="Contains" />
+<Link Source = "Contract" Target="Contract.EndDate" Category="Contains" />
+<Link Source = "Contract" Target="Contract.StartDate" Category="Contains" />
+<Link Source = "Contract" Target="Contract.SupervisorId" Category="Contains" />
+<Link Source = "Contract" Target="Contract.Text" Category="Contains" />
+<Link Source = "IModel" Target="Drug" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.Patients" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.Prescriptions" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.PersonSsn" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.Address" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.ExperienceYears" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.FirstName" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.LastName" Category="Contains" />
+<Link Source = "Doctor" Target="Doctor.Speciality" Category="Contains" />
+<Link Source = "IModel" Target="Patient" Category="Contains" />
+<Link Source = "Drug" Target="Drug.PharmaceuticalCompanyNameNavigation" Category="Contains" />
+<Link Source = "Drug" Target="Drug.Prescriptions" Category="Contains" />
+<Link Source = "Drug" Target="Drug.Sales" Category="Contains" />
+<Link Source = "Drug" Target="Drug.DrugTradeName" Category="Contains" />
+<Link Source="Drug" Target="PharmaceuticalCompany" From="Drug.PharmaceuticalCompanyName" To="PharmaceuticalCompany.PharmaceuticalCompanyName" Name="Drug -> PharmaceuticalCompany" Annotations="Relational:Name: drug_pharmaceutical_company_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Drug" Target="Drug.Formula" Category="Contains" />
+<Link Source = "Drug" Target="Drug.PharmaceuticalCompanyName" Category="Contains" />
+<Link Source = "IModel" Target="PharmaceuticalCompany" Category="Contains" />
+<Link Source = "Patient" Target="Patient.DoctorSsnNavigation" Category="Contains" />
+<Link Source = "Patient" Target="Patient.Prescriptions" Category="Contains" />
+<Link Source = "Patient" Target="Patient.PersonSsn" Category="Contains" />
+<Link Source="Patient" Target="Doctor" From="Patient.DoctorSsn" To="Doctor.PersonSsn" Name="Patient -> Doctor" Annotations="Relational:Name: patient_doctor_ssn_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Patient" Target="Patient.Address" Category="Contains" />
+<Link Source = "Patient" Target="Patient.Age" Category="Contains" />
+<Link Source = "Patient" Target="Patient.DoctorSsn" Category="Contains" />
+<Link Source = "Patient" Target="Patient.FirstName" Category="Contains" />
+<Link Source = "Patient" Target="Patient.LastName" Category="Contains" />
+<Link Source = "IModel" Target="Pharmacy" Category="Contains" />
+<Link Source = "PharmaceuticalCompany" Target="PharmaceuticalCompany.Contracts" Category="Contains" />
+<Link Source = "PharmaceuticalCompany" Target="PharmaceuticalCompany.Drugs" Category="Contains" />
+<Link Source = "PharmaceuticalCompany" Target="PharmaceuticalCompany.PharmaceuticalCompanyName" Category="Contains" />
+<Link Source = "PharmaceuticalCompany" Target="PharmaceuticalCompany.PhoneNumber" Category="Contains" />
+<Link Source = "IModel" Target="Prescription" Category="Contains" />
+<Link Source = "Pharmacy" Target="Pharmacy.Contracts" Category="Contains" />
+<Link Source = "Pharmacy" Target="Pharmacy.Sales" Category="Contains" />
+<Link Source = "Pharmacy" Target="Pharmacy.PharmacyName" Category="Contains" />
+<Link Source = "Pharmacy" Target="Pharmacy.Address" Category="Contains" />
+<Link Source = "Pharmacy" Target="Pharmacy.Phone" Category="Contains" />
+<Link Source = "IModel" Target="Sale" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.DoctorSsnNavigation" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.DrugTradeNameNavigation" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.PatientSsnNavigation" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.DoctorSsn" Category="Contains" />
+<Link Source="Prescription" Target="Doctor" From="Prescription.DoctorSsn" To="Doctor.PersonSsn" Name="Prescription -> Doctor" Annotations="Relational:Name: prescription_doctor_ssn_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Prescription" Target="Drug" From="Prescription.DrugTradeName" To="Drug.DrugTradeName" Name="Prescription -> Drug" Annotations="Relational:Name: prescription_drug_trade_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Prescription" Target="Patient" From="Prescription.PatientSsn" To="Patient.PersonSsn" Name="Prescription -> Patient" Annotations="Relational:Name: prescription_patient_ssn_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Prescription" Target="Prescription.PatientSsn" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.DrugTradeName" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.LatestDate" Category="Contains" />
+<Link Source = "Prescription" Target="Prescription.Quantity" Category="Contains" />
+<Link Source = "IModel" Target="Supervisor" Category="Contains" />
+<Link Source = "Sale" Target="Sale.DrugTradeNameNavigation" Category="Contains" />
+<Link Source = "Sale" Target="Sale.PharmacyNameNavigation" Category="Contains" />
+<Link Source = "Sale" Target="Sale.DrugTradeName" Category="Contains" />
+<Link Source="Sale" Target="Drug" From="Sale.DrugTradeName" To="Drug.DrugTradeName" Name="Sale -> Drug" Annotations="Relational:Name: sale_drug_trade_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Sale" Target="Pharmacy" From="Sale.PharmacyName" To="Pharmacy.PharmacyName" Name="Sale -> Pharmacy" Annotations="Relational:Name: sale_pharmacy_name_fkey" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Sale" Target="Sale.PharmacyName" Category="Contains" />
+<Link Source = "Sale" Target="Sale.Price" Category="Contains" />
+<Link Source = "IModel" Target="Supervisor" Category="Contains" />
+<Link Source = "Supervisor" Target="Supervisor.Contracts" Category="Contains" />
+<Link Source = "Supervisor" Target="Supervisor.SupervisorId" Category="Contains" />
+<Link Source = "Supervisor" Target="Supervisor.FirstName" Category="Contains" />
+<Link Source = "Supervisor" Target="Supervisor.LastName" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>
